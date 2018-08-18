@@ -15,10 +15,10 @@
           </mat-expansion-panel-header>
           <div class="row" width="100%">
               <div class="col-md-7 col-sm-5 col-xs-5">
-                <input placeholder="Ingrese el nombre del hotel" width="100px" [(ngModel)]="nameFilter.value">
+                <input class="inputName" placeholder="Ingrese el nombre del hotel" [(ngModel)]="nameFilter.value">
               </div>
               <div class="col-md-2 col-sm-2 col-xs-2">
-                <button mat-raised-button style="background-color: #023382; color: #ffffff;" (click)="searchByName()">Aceptar</button>
+                <button class="button-Accept" mat-raised-button (click)="searchByName()">Aceptar</button>
               </div>
           </div>
         </mat-expansion-panel>
@@ -33,71 +33,61 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="row" width="100%">
-              <div class="col-md-1 col-sm-1 col-xs-1">
+              <div class="col-md-1 col-sm-1 col-xs-1" style="float: left; width: 10%;">
                 <input type="checkbox" [(ngModel)]="activeCombos[0]" checked (change)="checkStars(0)" [disabled]="activeCombos[0]==true"> 
               </div>
-              <div class="col-md-5 col-sm-5 col-xs-4">
-                <div>Todas las Estrellas</div>
+              <div class="col-md-5 col-sm-5 col-xs-4" style="float: left; width: 70%;">
+                Todas las Estrellas
               </div>
           </div>
           <div class="row" width="100%">
-              <div class="col-md-1 col-sm-1 col-xs-1">
+              <div class="col-md-1 col-sm-1 col-xs-1" style="float: left; width: 10%;">
                 <input type="checkbox"[(ngModel)]="activeCombos[1]" (change)="checkStars(5)"> 
               </div>
-              <div class="col-md-5 col-sm-5 col-xs-5">
-                <div>
-                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                </div>
+              <div class="col-md-5 col-sm-5 col-xs-5" style="float: left; width: 70%;">
+                <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                <img src="../../../assets/icons/filters/star1.svg" height="15px">
               </div>
           </div>
           <div class="row" width="100%">
-              <div class="col-md-1 col-sm-1 col-xs-1">
+              <div class="col-md-1 col-sm-1 col-xs-1" style="float: left; width: 10%;">
                 <input type="checkbox" [(ngModel)]="activeCombos[2]" (change)="checkStars(4)"> 
               </div>
-              <div class="col-md-5 col-sm-5 col-xs-5">
-                <div>
-                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                </div>
+              <div class="col-md-5 col-sm-5 col-xs-5" style="float: left; width: 70%;">
+                <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                <img src="../../../assets/icons/filters/star1.svg" height="15px">
               </div>
           </div>
           <div class="row" width="100%">
-              <div class="col-md-1 col-sm-1 col-xs-1">
+              <div class="col-md-1 col-sm-1 col-xs-1" style="float: left; width: 10%;">
                 <input type="checkbox" [(ngModel)]="activeCombos[3]" (change)="checkStars(3)"> 
               </div>
-              <div class="col-md-5 col-sm-5 col-xs-5">
-                <div>
-                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                </div>
+              <div class="col-md-5 col-sm-5 col-xs-5" style="float: left; width: 70%;">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
               </div>
           </div>
           <div class="row" width="100%">
-              <div class="col-md-1 col-sm-1 col-xs-1">
+              <div class="col-md-1 col-sm-1 col-xs-1" style="float: left; width: 10%;">
                 <input type="checkbox" [(ngModel)]="activeCombos[4]" (change)="checkStars(2)"> 
               </div>
-              <div class="col-md-5 col-sm-5 col-xs-5">
-                <div>
-                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                </div>
+              <div class="col-md-5 col-sm-5 col-xs-5" style="float: left; width: 70%;">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
               </div>
           </div>
           <div class="row" width="100%">
-              <div class="col-md-1 col-sm-1 col-xs-1">
+              <div class="col-md-1 col-sm-1 col-xs-1" style="float: left; width: 10%;">
                 <input type="checkbox" [(ngModel)]="activeCombos[5]" (change)="checkStars(1)"> 
               </div>
-              <div class="col-md-5 col-sm-5 col-xs-5">
-                <div>
-                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
-                </div>
+              <div class="col-md-5 col-sm-5 col-xs-5" style="float: left; width: 70%;">
+                <img src="../../../assets/icons/filters/star1.svg" height="15px">
               </div>
           </div>
         </mat-expansion-panel>
@@ -123,15 +113,15 @@
             <div class="col-md-3 verticalLine col-sm-12 col-xs-12" style="width: 100%;">
               <div class="row" style="width: 100%; padding: 0px; margin: 0px;"><p style="text-align: center; font-size: 14px; width: 100%">Precio por noche por <br/>habitación</p></div>
               <div class="row" style="width: 100%;">
-                <div class="col-md-5 col-sm-4 col-xs-5" style="padding: 0px; margin: 0px;">
+                <div class="col-md-5 col-sm-4 col-xs-5" style="padding: 0px; margin: 0px;float: left; width: 50%;">
                   <p class="currency">ARS</p>
                 </div>
-                <div class="col-md-5 col-sm-4 col-xs-5" style="padding: 0px; margin: 0px;">
+                <div class="col-md-5 col-sm-4 col-xs-5" style="padding: 0px; margin: 0px; float: left; width: 50%;">
                   <p class="price">{{hotel.price}}</p>
                 </div>
               </div>
               <div class="row" style="width: 100%;">
-                <div style="width:100%; margin: 0px;margin:auto 0;">
+                <div style="width:100%; margin:auto 0px;">
                   <button mat-raised-button class="button-hotel">Ver hotel</button>
                 </div>
               </div>
