@@ -1,20 +1,145 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<header></header>
+
+<div class="row">
+  <div class="col-md-3 filterPanel col-sm-12 col-xs-12">
+    <mat-card style="padding-bottom: 10px!important; background-color: white;"><div style="cursor: pointer; font-weight: bold; vertical-align: middle; padding-bottom: 0px!important; height: 100%; width: 100%;" (click)="close()">Filtros</div></mat-card>
+    <div *ngIf="isOpen" style="background-color: white;">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div class="row" style="padding-top: 15px!important; padding-left: 25px!important;">
+                <img src="../../../assets/icons/filters/search.svg" alt="buscar" height="22px" class="img-title"> <p class="title">Nombre del hotel</p>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row" width="100%">
+              <div class="col-md-7 col-sm-5 col-xs-5">
+                <input placeholder="Ingrese el nombre del hotel" width="100px" [(ngModel)]="nameFilter.value">
+              </div>
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <button mat-raised-button style="background-color: #023382; color: #ffffff;" (click)="searchByName()">Aceptar</button>
+              </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion style="background-color: white;">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="margin-top:5px;">
+              <div class="row" style="padding-top: 15px!important; padding-left: 25px!important;">
+                <img src="../../../assets/icons/filters/star.svg" alt="buscar" height="22px" class="img-title"> <p class="title">Estrellas</p>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row" width="100%">
+              <div class="col-md-1 col-sm-1 col-xs-1">
+                <input type="checkbox" [(ngModel)]="activeCombos[0]" checked (change)="checkStars(0)" [disabled]="activeCombos[0]==true"> 
+              </div>
+              <div class="col-md-5 col-sm-5 col-xs-4">
+                <div>Todas las Estrellas</div>
+              </div>
+          </div>
+          <div class="row" width="100%">
+              <div class="col-md-1 col-sm-1 col-xs-1">
+                <input type="checkbox"[(ngModel)]="activeCombos[1]" (change)="checkStars(5)"> 
+              </div>
+              <div class="col-md-5 col-sm-5 col-xs-5">
+                <div>
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                </div>
+              </div>
+          </div>
+          <div class="row" width="100%">
+              <div class="col-md-1 col-sm-1 col-xs-1">
+                <input type="checkbox" [(ngModel)]="activeCombos[2]" (change)="checkStars(4)"> 
+              </div>
+              <div class="col-md-5 col-sm-5 col-xs-5">
+                <div>
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                  <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                </div>
+              </div>
+          </div>
+          <div class="row" width="100%">
+              <div class="col-md-1 col-sm-1 col-xs-1">
+                <input type="checkbox" [(ngModel)]="activeCombos[3]" (change)="checkStars(3)"> 
+              </div>
+              <div class="col-md-5 col-sm-5 col-xs-5">
+                <div>
+                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                </div>
+              </div>
+          </div>
+          <div class="row" width="100%">
+              <div class="col-md-1 col-sm-1 col-xs-1">
+                <input type="checkbox" [(ngModel)]="activeCombos[4]" (change)="checkStars(2)"> 
+              </div>
+              <div class="col-md-5 col-sm-5 col-xs-5">
+                <div>
+                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                </div>
+              </div>
+          </div>
+          <div class="row" width="100%">
+              <div class="col-md-1 col-sm-1 col-xs-1">
+                <input type="checkbox" [(ngModel)]="activeCombos[5]" (change)="checkStars(1)"> 
+              </div>
+              <div class="col-md-5 col-sm-5 col-xs-5">
+                <div>
+                    <img src="../../../assets/icons/filters/star1.svg" height="15px">
+                </div>
+              </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>  
+  </div>
+  <div class="col-md-8 col-sm-12 col-xs-12 contentPanel">
+    <div *ngFor="let hotel of hotels" style="padding-bottom:10px;">
+        <mat-card style="padding-bottom: 10px!important; background-color: white;">
+          <div class="row">
+            <div class="col-md-3 col-sm-12 col-xs-12">
+              <img src= "../../../assets/images/hotels/{{hotel.image}}" width="100%">
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="row hotel-title">{{hotel.name}}</div>
+              <div class="row images">
+                <img *ngFor="let i of arrayOne(hotel.stars)" src="../../../assets/icons/filters/star1.svg" height="20px">
+              </div>
+              <div class="row images">
+                  <img *ngFor="let i of hotel.amenities" src="../../../assets/icons/amenities/{{i}}.svg" height="20px" style="padding-right:10px;">
+                </div>
+            </div>
+            <div class="col-md-3 verticalLine col-sm-12 col-xs-12" style="width: 100%;">
+              <div class="row" style="width: 100%; padding: 0px; margin: 0px;"><p style="text-align: center; font-size: 14px; width: 100%">Precio por noche por <br/>habitación</p></div>
+              <div class="row" style="width: 100%;">
+                <div class="col-md-5 col-sm-4 col-xs-5" style="padding: 0px; margin: 0px;">
+                  <p class="currency">ARS</p>
+                </div>
+                <div class="col-md-5 col-sm-4 col-xs-5" style="padding: 0px; margin: 0px;">
+                  <p class="price">{{hotel.price}}</p>
+                </div>
+              </div>
+              <div class="row" style="width: 100%;">
+                <div style="width:100%; margin: 0px;margin:auto 0;">
+                  <button mat-raised-button class="button-hotel">Ver hotel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
 

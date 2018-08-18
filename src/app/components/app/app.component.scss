@@ -1,0 +1,108 @@
+.filterPanel {
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 100%;
+}
+.contentPanel{
+    padding-top:20px; width: 100%;
+}
+
+.title{
+    margin-left: 15px;
+    color: #023382;
+    font-size: 16px;
+}
+.hotel-title{
+    color: #023382;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom:10px;
+}
+.img-title{
+    fill: #023382;
+}
+.img-star path{
+    fill: yellow;
+}
+.verticalLine {
+   border-left: thin dashed #000000;
+   border-top: none;
+}
+
+.currency{
+    text-align: right; font-size: 18px;width: 100%; vertical-align:middle; line-height: 45px;
+    color: #e26906;
+}
+
+.price{
+    text-align: left; font-size: 30px;width: 100%; vertical-align:middle; line-height: 40px; font-weight: bold; 
+    color: #e26906;
+}
+
+.button-hotel{
+    background-color: #023382; color: #ffffff; text-align: center; width:150px; margin-left:25%;
+}
+
+.images{
+    padding-bottom:15px;
+}
+
+@media only screen and (max-width: 933px) {
+    .title{
+        margin-left: 12px;
+        color: #023382;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1323px) {
+    .button-hotel{
+        background-color: #023382; color: #ffffff; text-align: center; width:100%!important; margin-left:8%; padding:0px; 
+    }
+}
+
+@media only screen and (max-width: 1090px) {
+    .currency{
+        text-align: right; font-size: 18px;width: 100%; vertical-align:middle; line-height: 45px;
+        color: #e26906;
+    }
+    
+    .price{
+        text-align: left; font-size: 25px;width: 100%; vertical-align:middle; line-height: 40px; font-weight: bold; 
+        color: #e26906;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .filterPanel {
+        margin-left: 10px;
+        margin-top: 10px;
+        height: 100%;
+        padding-right: 35px;
+    }
+
+    .contentPanel{
+        padding-top:20px; width: 100%; padding-left: 25px; padding-right: 25px;
+    }
+
+    .verticalLine {
+        border-left: none;
+        border-top: thin dashed #000000;
+     }
+
+     .button-hotel{
+        background-color: #023382; color: #ffffff; text-align: center; width:100%!important; margin-left:0px;
+    }
+
+    .hotel-title{
+        color: #023382;
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom:10px;
+        padding-left:10px;
+    }
+    .images{
+        padding-left:10px;
+        padding-bottom:15px;
+    }
+}
