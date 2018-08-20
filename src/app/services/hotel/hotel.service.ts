@@ -42,6 +42,9 @@ export default class HotelServiceImpl implements HotelService {
             
     }
 
+    /**
+     * Get path of the resource
+     */
     public getResourcePath(): string {
         return this.api + this.resource;
       }

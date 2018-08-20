@@ -43,6 +43,9 @@ export class AppComponent  implements OnInit{
     return Array(n);
   }
 
+  /**
+   * Method to search list of hotels by name
+   */
   searchByName() {
     let array = [];
     if(this.nameFilter.value!=""){
@@ -51,6 +54,10 @@ export class AppComponent  implements OnInit{
     this.getAll(array);
   }
 
+  /**
+   * Method to get all hotels
+   * @param filters Filters to be applied
+   */
   getAll(filters: Array<Filter<any>>){
     this.hotelService.getAll(filters)
       .subscribe(
@@ -63,6 +70,10 @@ export class AppComponent  implements OnInit{
       );
   }
 
+  /**
+   * Method when a checkbox of the stars is checked
+   * @param stars Star that was checked
+   */
   checkStars(stars: number){
     let array = [];
     if(stars==0){

@@ -5,5 +5,9 @@ import { Injectable } from "@angular/core";
 
 export interface HotelService {
 
+    /**
+     * Get all hotels
+     * @param filters Filters to apply 
+     */
     getAll(filters: Array<Filter<any>>): Observable<Array<Hotel>>;
 }
