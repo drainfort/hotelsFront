@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule } from '@angular/http';
 import { AppComponent } from '../components/app/app.component';
 import HotelServiceImpl from '../services/hotel/hotel.service';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
@@ -13,7 +13,6 @@ import {MatInputModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +20,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     HttpClientModule,
     MatExpansionModule,
     MatButtonModule,
@@ -30,10 +30,7 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     FormsModule
   ],
-  providers: [
-    HttpClient,
-    HotelServiceImpl
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

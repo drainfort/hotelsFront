@@ -1,27 +1,18 @@
-# HotelsFront
+#HotelFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.3.
+Esta aplicación tiene dos archivos de confiruración:
+/src/environments/enviroment.ts
+/src/environments/enviroment.prod.ts
 
-## Development server
+Lo único que se especifica en este archivo es la url de conexión al servidor.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#Ejecución 
+Para ejecutar el proyecto primero:
+Instalar librerias con el comando: npm i
+Correr aplicación: npm start
 
-## Code scaffolding
+#Página principal
+Por default el servidor corre por el puerto 4200
+Al correr el servidor entrar a la página: http://localhost:4200/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+En la columna izquierda si se hace click sobre la sección que dice filtro se puede ocultar todos los filtros.
