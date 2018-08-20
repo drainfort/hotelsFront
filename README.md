@@ -10,6 +10,7 @@ Lo único que se especifica en este archivo es la url de conexión al servidor.
 Para ejecutar el proyecto primero:
 Instalar librerias con el comando: npm i
 Correr aplicación: npm start
+Para compilar y minificar archivos: npm run build
 
 #Página principal
 Por default el servidor corre por el puerto 4200
